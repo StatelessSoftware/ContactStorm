@@ -1,6 +1,6 @@
 {
   "name": "contact-storm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vanilla JS Client Side Contact Form Handler",
   "main": "ContactStorm.js",
   "scripts": {
