@@ -50,7 +50,11 @@ You will need to change the following
 
 ## Events
 
-You can specify a few callbacks for events along the send process: `onSubmit`, `onSuccess`, and `onError`.  `onSubmit` runs as soon as the submission occours, `onSuccess` runs if the submission is successful, and `onError` runs if the submission fails.
+You can specify a few callbacks for events along the send process.
+
+- `onSubmit` - Runs as soon as the submission occours
+- `onSuccess` - Runs if the submission is successful
+- `onError` - Runs if the submission fails.
 
 ```js
 
