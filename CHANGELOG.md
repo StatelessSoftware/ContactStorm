@@ -4,5 +4,6 @@
 
 ### Fixes
 
+- [Issue #3] - Readme - Wrong cdn link for self
 - [Issue #2] - Readme - Broken links
 - [Issue #1] - Readme - Intro
