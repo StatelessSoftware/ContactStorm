@@ -1,5 +1,5 @@
-# ContactStorm - The lightning fast way for contacts to poor in.
-Vanilla JS Client Side Contact Form Handler
+# ContactStorm
+### The lightning fast way to let leads come pouring in
 
 ## Prereq.
 
