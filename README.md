@@ -3,7 +3,7 @@
 
 ## Prereq.
 
-- Setup [www.emailjs.com], create an account, create a form
+- Setup www.emailjs.com, create an account, create a form
 - Create an HTML form on your page, with the ID the same as the form name you created on emailjs
 - Include the following tags (before the `</head>`):
 
@@ -46,7 +46,7 @@ You will need to change the following
 
 - Change "myUsername" to your username found on www.emailjs.com
 - Change "gmail" the email provider found on www.emailjs.com (or leave it if you use gmail)
-- Change "contact" to the name of the form created on emailjs
+- Change "contact" to the name of the form created on www.emailjs.com
 
 ## Events
 
