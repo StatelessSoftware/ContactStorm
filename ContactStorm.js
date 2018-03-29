@@ -38,6 +38,7 @@ function ContactStorm(username, provider, formName) {
         let payload = {};
         
         // Load form inputs
+        let formElements = this._form.querySelectorAll("input, textarea, select");
         formElements.forEach(function(element) {
             let key = element.name || element.id;
             payload[key] = element.value;
