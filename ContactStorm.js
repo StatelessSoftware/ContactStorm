@@ -3,6 +3,8 @@ function ContactStorm(username, provider, formName) {
     this.username = username;
     this.provider = provider;
     this.formName = formName;
+    
+    this._form = false;
 
     this.onSubmit = function(cb) {
         this.cbSubmit = cb;
@@ -32,38 +34,23 @@ function ContactStorm(username, provider, formName) {
 
         // Call submission handler
         this.cbSubmit();
+
+        let payload = {};
         
         // Load form inputs
-        var cf_name = document.getElementById("name");
-        var cf_email = document.getElementById("email");
-        var cf_description = document.getElementById("description");
-        
-        // Check form
-        if (cf_name && cf_email && cf_description) {
-            // Form is full
-            cf_name = cf_name.value;
-            cf_email = cf_email.value;
-            cf_description = cf_description.value;
-    
-            // Output results for debug
-            var cf_mail = {
-                name: cf_name,
-                email: cf_email,
-                description: cf_description
-            };
+        let formElements = this._form.querySelectorAll("input, textarea, select");
+        formElements.forEach(function(element) {
+            let key = element.name || element.id;
+            payload[key] = element.value;
+        }.bind(this));
 
-            emailjs.send(this.provider, this.formName, cf_mail)
-                .then(function (response) {
-                    this.cbSuccess(response);
-                }.bind(this))
-                .catch(function(error) {
-                    this.cbError(error);
-                }.bind(this))
-
-        }
-        else {
-            throw "Could not find all form fields.";
-        }
+        emailjs.send(this.provider, this.formName, payload)
+            .then(function (response) {
+                this.cbSuccess(response);
+            }.bind(this))
+            .catch(function(error) {
+                this.cbError(error);
+            }.bind(this))
 
     }
 
@@ -74,10 +61,10 @@ function ContactStorm(username, provider, formName) {
             emailjs.init(this.username);
     
             // Initialize contact form
-            var contactForm = document.getElementById(this.formName);
+            this._form = document.getElementById(this.formName);
     
-            if (contactForm) {
-                contactForm.addEventListener(
+            if (this._form) {
+                this._form.addEventListener(
                     "submit",
                     this.submit.bind(this),
                     false
