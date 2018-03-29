@@ -9,7 +9,7 @@
 
 ```html
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript" src="https://rawgit.com/StatelessSoftware/ContactStorm/v0.0.2/ContactStorm.js"></script>
+<script type="text/javascript" src="https://rawgit.com/StatelessSoftware/ContactStorm/v0.0.3/ContactStorm.js"></script>
 ```
 
 ## Setup (Vanilla JS)
